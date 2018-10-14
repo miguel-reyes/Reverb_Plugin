@@ -1,6 +1,6 @@
 /**
  * @file mf_allpass.h
- * @author Marquis Fields & Miguel Reyes Botello <br>
+ * @author Marquis Fields, Miguel Reyes Botello & Malte Schneider<br>
  * Audiocommunication Group, Technical University Berlin <br>
  * A simple allpassfilter <br>
  * <br>

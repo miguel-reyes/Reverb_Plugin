@@ -1,0 +1,203 @@
+\hypertarget{structmf__allpass}{}\section{mf\+\_\+allpass Struct Reference}
+\label{structmf__allpass}\index{mf\+\_\+allpass@{mf\+\_\+allpass}}
+
+
+A structure for a allpass filter ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$mf\+\_\+allpass.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structmf__allpass_a016ac476fe7e954a488af64836957787}{delay}}
+\item 
+int \mbox{\hyperlink{structmf__allpass_af88b9d534b3acdede269705d2b676181}{counter}}
+\item 
+float \mbox{\hyperlink{structmf__allpass_a81de95ecaee64df89e8682eee2284ffe}{gain}}
+\item 
+float \mbox{\hyperlink{structmf__allpass_a0673579a16b38b77d5761459bd3aaf14}{buffer}} \mbox{[}10000\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$ \mbox{\hyperlink{structmf__allpass_a743b02b600467e4fff788842b303a432}{mf\+\_\+allpass\+\_\+new}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new allpassfilter object~\newline
+ The function sets the parameters of ~\newline
+ the allpassfilter class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__allpass_a36b0067cba49f41dccbff7c2ecc155f1}{mf\+\_\+allpass\+\_\+free}} (\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Frees a allpassfilter object~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__allpass_a049acefc61228da407759fcdb5088c70}{mf\+\_\+allpass\+\_\+set\+Delay}} (\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$x, int \mbox{\hyperlink{structmf__allpass_a016ac476fe7e954a488af64836957787}{delay}})
+\begin{DoxyCompactList}\small\item\em Sets the feedback \& feedforward gain parameter according to \char`\"{}\+Schröder\+: Natural Sounding Reverberation\char`\"{} \href{http://www.aes.org/e-lib/browse.cfm?elib=849}{\tt http\+://www.\+aes.\+org/e-\/lib/browse.\+cfm?elib=849} ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__allpass_a38ca5027a80c82fd242d7f40e02cd960}{mf\+\_\+allpass\+\_\+perform}} (\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$x, float $\ast$in, float $\ast$out, int vector\+Size)
+\begin{DoxyCompactList}\small\item\em Performs a allpassfilter structure in realtime ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__allpass_a38aaea521b618aabcfdbe4b27f7da14b}{mf\+\_\+allpass\+\_\+clear\+Buffer}} (\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Clears the buffer of the allpassfilter~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure for a allpass filter ~\newline
+ 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structmf__allpass_a38aaea521b618aabcfdbe4b27f7da14b}\label{structmf__allpass_a38aaea521b618aabcfdbe4b27f7da14b}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!mf\+\_\+allpass\+\_\+clear\+Buffer@{mf\+\_\+allpass\+\_\+clear\+Buffer}}
+\index{mf\+\_\+allpass\+\_\+clear\+Buffer@{mf\+\_\+allpass\+\_\+clear\+Buffer}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{mf\+\_\+allpass\+\_\+clear\+Buffer()}{mf\_allpass\_clearBuffer()}}
+{\footnotesize\ttfamily void mf\+\_\+allpass\+\_\+clear\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Clears the buffer of the allpassfilter~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My allpassfilter object ~\newline
+ \\
+\hline
+{\em buffer} & The buffer which holds delayed samples ~\newline
+ The function sets all values of the buffer to zero ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__allpass_a36b0067cba49f41dccbff7c2ecc155f1}\label{structmf__allpass_a36b0067cba49f41dccbff7c2ecc155f1}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!mf\+\_\+allpass\+\_\+free@{mf\+\_\+allpass\+\_\+free}}
+\index{mf\+\_\+allpass\+\_\+free@{mf\+\_\+allpass\+\_\+free}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{mf\+\_\+allpass\+\_\+free()}{mf\_allpass\_free()}}
+{\footnotesize\ttfamily void mf\+\_\+allpass\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Frees a allpassfilter object~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My allpassfilter object ~\newline
+ The function frees the allocated memory~\newline
+ of a allpassfilter object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__allpass_a743b02b600467e4fff788842b303a432}\label{structmf__allpass_a743b02b600467e4fff788842b303a432}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!mf\+\_\+allpass\+\_\+new@{mf\+\_\+allpass\+\_\+new}}
+\index{mf\+\_\+allpass\+\_\+new@{mf\+\_\+allpass\+\_\+new}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{mf\+\_\+allpass\+\_\+new()}{mf\_allpass\_new()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$ mf\+\_\+allpass\+\_\+new (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Creates a new allpassfilter object~\newline
+ The function sets the parameters of ~\newline
+ the allpassfilter class. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the newly created stp\+\_\+allpassfilter object ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structmf__allpass_a38ca5027a80c82fd242d7f40e02cd960}\label{structmf__allpass_a38ca5027a80c82fd242d7f40e02cd960}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!mf\+\_\+allpass\+\_\+perform@{mf\+\_\+allpass\+\_\+perform}}
+\index{mf\+\_\+allpass\+\_\+perform@{mf\+\_\+allpass\+\_\+perform}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{mf\+\_\+allpass\+\_\+perform()}{mf\_allpass\_perform()}}
+{\footnotesize\ttfamily void mf\+\_\+allpass\+\_\+perform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$}]{x,  }\item[{float $\ast$}]{in,  }\item[{float $\ast$}]{out,  }\item[{int}]{vector\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Performs a allpassfilter structure in realtime ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My allpassfilter object ~\newline
+ \\
+\hline
+{\em delayout} & The value of the buffer at given sample ~\newline
+ \\
+\hline
+{\em buffer} & The buffer which holds delayed samples ~\newline
+ \\
+\hline
+{\em counter} & The index of the current sample ~\newline
+ \\
+\hline
+{\em in} & The input vector ~\newline
+ \\
+\hline
+{\em out} & The output vector ~\newline
+ \\
+\hline
+{\em vector\+Size} & The vector\+Size ~\newline
+ The function stp\+\_\+gain\+\_\+perform performs the gain adjustment of ~\newline
+ the incoming signal and copies the result to the output vector ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__allpass_a049acefc61228da407759fcdb5088c70}\label{structmf__allpass_a049acefc61228da407759fcdb5088c70}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!mf\+\_\+allpass\+\_\+set\+Delay@{mf\+\_\+allpass\+\_\+set\+Delay}}
+\index{mf\+\_\+allpass\+\_\+set\+Delay@{mf\+\_\+allpass\+\_\+set\+Delay}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{mf\+\_\+allpass\+\_\+set\+Delay()}{mf\_allpass\_setDelay()}}
+{\footnotesize\ttfamily void mf\+\_\+allpass\+\_\+set\+Delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$}]{x,  }\item[{int}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets the feedback \& feedforward gain parameter according to \char`\"{}\+Schröder\+: Natural Sounding Reverberation\char`\"{} \href{http://www.aes.org/e-lib/browse.cfm?elib=849}{\tt http\+://www.\+aes.\+org/e-\/lib/browse.\+cfm?elib=849} ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & My allpassfilter object ~\newline
+ \\
+\hline
+{\em gain} & The feedback gain value ~\newline
+ \\
+\hline
+{\em delay} & The delay value ~\newline
+ \\
+\hline
+{\em t60} & The desired reverberation time~\newline
+ \\
+\hline
+{\em fs} & The current sample rate ~\newline
+ The function sets the feedback gain parameter of ~\newline
+ the allpassfilter class \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structmf__allpass_a0673579a16b38b77d5761459bd3aaf14}\label{structmf__allpass_a0673579a16b38b77d5761459bd3aaf14}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!buffer@{buffer}}
+\index{buffer@{buffer}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily float mf\+\_\+allpass\+::buffer\mbox{[}10000\mbox{]}}
+
+An array to store the delayed samples \mbox{\Hypertarget{structmf__allpass_af88b9d534b3acdede269705d2b676181}\label{structmf__allpass_af88b9d534b3acdede269705d2b676181}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!counter@{counter}}
+\index{counter@{counter}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily int mf\+\_\+allpass\+::counter}
+
+parameter for indexing the current sample \mbox{\Hypertarget{structmf__allpass_a016ac476fe7e954a488af64836957787}\label{structmf__allpass_a016ac476fe7e954a488af64836957787}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!delay@{delay}}
+\index{delay@{delay}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{delay}{delay}}
+{\footnotesize\ttfamily int mf\+\_\+allpass\+::delay}
+
+parameter for adjusting the delay of the multi tap delay \mbox{\Hypertarget{structmf__allpass_a81de95ecaee64df89e8682eee2284ffe}\label{structmf__allpass_a81de95ecaee64df89e8682eee2284ffe}} 
+\index{mf\+\_\+allpass@{mf\+\_\+allpass}!gain@{gain}}
+\index{gain@{gain}!mf\+\_\+allpass@{mf\+\_\+allpass}}
+\subsubsection{\texorpdfstring{gain}{gain}}
+{\footnotesize\ttfamily float mf\+\_\+allpass\+::gain}
+
+parameter for adjusting the level of the recursive gain 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Allpassfilter/mf\+\_\+allpass.\+h\end{DoxyCompactItemize}

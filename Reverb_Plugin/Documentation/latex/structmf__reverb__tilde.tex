@@ -1,0 +1,192 @@
+\hypertarget{structmf__reverb__tilde}{}\section{mf\+\_\+reverb\+\_\+tilde Struct Reference}
+\label{structmf__reverb__tilde}\index{mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}}
+
+
+The Pure Data struct of the mf\+\_\+reverb$\sim$ object. ~\newline
+  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a23a9fce50630debf630d5c62efc89728}\label{structmf__reverb__tilde_a23a9fce50630debf630d5c62efc89728}} 
+t\+\_\+object {\bfseries x\+\_\+obj}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a59def8141c075036c1a74518d4dce107}\label{structmf__reverb__tilde_a59def8141c075036c1a74518d4dce107}} 
+t\+\_\+sample {\bfseries f}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a9464c814fcac7c89e8b7edd0b12f1651}\label{structmf__reverb__tilde_a9464c814fcac7c89e8b7edd0b12f1651}} 
+\mbox{\hyperlink{structmf__allpass}{mf\+\_\+allpass}} $\ast$ {\bfseries allpass} \mbox{[}40\mbox{]}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a887e5e74cdc880a47774d257a8710c70}\label{structmf__reverb__tilde_a887e5e74cdc880a47774d257a8710c70}} 
+\mbox{\hyperlink{structmf__comb}{mf\+\_\+comb}} $\ast$ {\bfseries comb} \mbox{[}4\mbox{]}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a37d804c62370e434a041e0fcfab5cb77}\label{structmf__reverb__tilde_a37d804c62370e434a041e0fcfab5cb77}} 
+float {\bfseries t60}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a1dae57844d14186ce92977bab01bab78}\label{structmf__reverb__tilde_a1dae57844d14186ce92977bab01bab78}} 
+t\+\_\+sample {\bfseries level}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_ac2c4b046013eeb59dd5b13071a09580c}\label{structmf__reverb__tilde_ac2c4b046013eeb59dd5b13071a09580c}} 
+float {\bfseries wet\+Level}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_ac9346f29402393957d3db8dcd4acadc6}\label{structmf__reverb__tilde_ac9346f29402393957d3db8dcd4acadc6}} 
+bool {\bfseries off}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a05de17e4fc3b189a9ee0f2e87e331587}\label{structmf__reverb__tilde_a05de17e4fc3b189a9ee0f2e87e331587}} 
+t\+\_\+outlet $\ast$ {\bfseries x\+\_\+outl}
+\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a04e694da390699470780630fc90b2065}\label{structmf__reverb__tilde_a04e694da390699470780630fc90b2065}} 
+t\+\_\+outlet $\ast$ {\bfseries x\+\_\+outr}
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structmf__reverb__tilde_af0c8d477b1d56aa09fc89d5c532de546}{comb\+\_\+out1}} \mbox{[}n\mbox{]} Output of comb filter 1$<$ br $>$
+\begin{DoxyCompactList}\small\item\em Calculates the output vector including reverb effect~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__reverb__tilde_a5fcca42e8b8fbd0e3325c838b890f932}{mf\+\_\+reverb\+\_\+tilde\+\_\+dsp}} (\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$x, t\+\_\+signal $\ast$$\ast$sp)
+\begin{DoxyCompactList}\small\item\em Adds mf\+\_\+reverb\+\_\+tilde\+\_\+perform to the signal chain. ~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__reverb__tilde_a7041f2552459a41548d6fae01b7e3d89}{mf\+\_\+reverb\+\_\+tilde\+\_\+free}} (\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Frees our object~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__reverb__tilde_a61d1ad50d068104d1291bc8ae8c6a8e6}{mf\+\_\+reverb\+\_\+tilde\+\_\+panic}} (\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$x)
+\begin{DoxyCompactList}\small\item\em Panic button to mute output~\newline
+ \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{structmf__reverb__tilde_a2b9bdb881d12c73657e4b21151c5ab2c}{mf\+\_\+reverb\+\_\+tilde\+\_\+new}} (t\+\_\+floatarg f)
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} object.~\newline
+ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{structmf__reverb__tilde_a408c614805a7e4e145d66cfa69c780a0}{mf\+\_\+reverb\+\_\+tilde\+\_\+wet}} (\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$x, float wet)
+\begin{DoxyCompactList}\small\item\em Sets the wet level of the reverb~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structmf__reverb__tilde_a4ef10d6c38f7e4df332cd67d376d2e51}\label{structmf__reverb__tilde_a4ef10d6c38f7e4df332cd67d376d2e51}} 
+void \mbox{\hyperlink{structmf__reverb__tilde_a4ef10d6c38f7e4df332cd67d376d2e51}{mf\+\_\+reverb\+\_\+tilde\+\_\+setup}} (void)
+\begin{DoxyCompactList}\small\item\em Setup of \mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Pure Data struct of the mf\+\_\+reverb$\sim$ object. ~\newline
+ 
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{structmf__reverb__tilde_af0c8d477b1d56aa09fc89d5c532de546}\label{structmf__reverb__tilde_af0c8d477b1d56aa09fc89d5c532de546}} 
+\index{mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}!comb\+\_\+out1@{comb\+\_\+out1}}
+\index{comb\+\_\+out1@{comb\+\_\+out1}!mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}}
+\subsubsection{\texorpdfstring{comb\+\_\+out1()}{comb\_out1()}}
+{\footnotesize\ttfamily comb\+\_\+out1\mbox{[}n\mbox{]} Output of comb filter 1$<$ br $>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Calculates the output vector including reverb effect~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & A pointer to the object, input and output vectors.~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__reverb__tilde_a5fcca42e8b8fbd0e3325c838b890f932}\label{structmf__reverb__tilde_a5fcca42e8b8fbd0e3325c838b890f932}} 
+\index{mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}!mf\+\_\+reverb\+\_\+tilde\+\_\+dsp@{mf\+\_\+reverb\+\_\+tilde\+\_\+dsp}}
+\index{mf\+\_\+reverb\+\_\+tilde\+\_\+dsp@{mf\+\_\+reverb\+\_\+tilde\+\_\+dsp}!mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}}
+\subsubsection{\texorpdfstring{mf\+\_\+reverb\+\_\+tilde\+\_\+dsp()}{mf\_reverb\_tilde\_dsp()}}
+{\footnotesize\ttfamily void mf\+\_\+reverb\+\_\+tilde\+\_\+dsp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$}]{x,  }\item[{t\+\_\+signal $\ast$$\ast$}]{sp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Adds mf\+\_\+reverb\+\_\+tilde\+\_\+perform to the signal chain. ~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the stp\+\_\+gain\+\_\+tilde object ~\newline
+ \\
+\hline
+{\em sp} & A pointer the input and output vectors ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__reverb__tilde_a7041f2552459a41548d6fae01b7e3d89}\label{structmf__reverb__tilde_a7041f2552459a41548d6fae01b7e3d89}} 
+\index{mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}!mf\+\_\+reverb\+\_\+tilde\+\_\+free@{mf\+\_\+reverb\+\_\+tilde\+\_\+free}}
+\index{mf\+\_\+reverb\+\_\+tilde\+\_\+free@{mf\+\_\+reverb\+\_\+tilde\+\_\+free}!mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}}
+\subsubsection{\texorpdfstring{mf\+\_\+reverb\+\_\+tilde\+\_\+free()}{mf\_reverb\_tilde\_free()}}
+{\footnotesize\ttfamily void mf\+\_\+reverb\+\_\+tilde\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Frees our object~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the \mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} object ~\newline
+ The function frees the allocated memory~\newline
+ of a reverb object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__reverb__tilde_a2b9bdb881d12c73657e4b21151c5ab2c}\label{structmf__reverb__tilde_a2b9bdb881d12c73657e4b21151c5ab2c}} 
+\index{mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}!mf\+\_\+reverb\+\_\+tilde\+\_\+new@{mf\+\_\+reverb\+\_\+tilde\+\_\+new}}
+\index{mf\+\_\+reverb\+\_\+tilde\+\_\+new@{mf\+\_\+reverb\+\_\+tilde\+\_\+new}!mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}}
+\subsubsection{\texorpdfstring{mf\+\_\+reverb\+\_\+tilde\+\_\+new()}{mf\_reverb\_tilde\_new()}}
+{\footnotesize\ttfamily void $\ast$ mf\+\_\+reverb\+\_\+tilde\+\_\+new (\begin{DoxyParamCaption}\item[{t\+\_\+floatarg}]{f }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Creates a new \mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} object.~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & sets the reverberation time in seconds. ~\newline
+ For more information please refer to the \href{https://github.com/pure-data/externals-howto}{\tt Pure Data Docs } ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__reverb__tilde_a61d1ad50d068104d1291bc8ae8c6a8e6}\label{structmf__reverb__tilde_a61d1ad50d068104d1291bc8ae8c6a8e6}} 
+\index{mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}!mf\+\_\+reverb\+\_\+tilde\+\_\+panic@{mf\+\_\+reverb\+\_\+tilde\+\_\+panic}}
+\index{mf\+\_\+reverb\+\_\+tilde\+\_\+panic@{mf\+\_\+reverb\+\_\+tilde\+\_\+panic}!mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}}
+\subsubsection{\texorpdfstring{mf\+\_\+reverb\+\_\+tilde\+\_\+panic()}{mf\_reverb\_tilde\_panic()}}
+{\footnotesize\ttfamily void mf\+\_\+reverb\+\_\+tilde\+\_\+panic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Panic button to mute output~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the \mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} object ~\newline
+ The function mutes output~\newline
+ of the reverb object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structmf__reverb__tilde_a408c614805a7e4e145d66cfa69c780a0}\label{structmf__reverb__tilde_a408c614805a7e4e145d66cfa69c780a0}} 
+\index{mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}!mf\+\_\+reverb\+\_\+tilde\+\_\+wet@{mf\+\_\+reverb\+\_\+tilde\+\_\+wet}}
+\index{mf\+\_\+reverb\+\_\+tilde\+\_\+wet@{mf\+\_\+reverb\+\_\+tilde\+\_\+wet}!mf\+\_\+reverb\+\_\+tilde@{mf\+\_\+reverb\+\_\+tilde}}
+\subsubsection{\texorpdfstring{mf\+\_\+reverb\+\_\+tilde\+\_\+wet()}{mf\_reverb\_tilde\_wet()}}
+{\footnotesize\ttfamily void mf\+\_\+reverb\+\_\+tilde\+\_\+wet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} $\ast$}]{x,  }\item[{float}]{wet }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [related]}}
+
+
+
+Sets the wet level of the reverb~\newline
+ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & A pointer the \mbox{\hyperlink{structmf__reverb__tilde}{mf\+\_\+reverb\+\_\+tilde}} object ~\newline
+ \\
+\hline
+{\em wet} & Value from the slider to set wet level ~\newline
+ The function sets the wet level~\newline
+ of the reverb object \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+mf\+\_\+reverb\+\_\+pd.\+c\end{DoxyCompactItemize}

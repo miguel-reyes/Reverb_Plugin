@@ -1,3 +1,16 @@
+/**
+ * @file mf_reverb.h
+ * @author Marquis Fields, Miguel Reyes Botello & Malte Schneider <br>
+ * Audiocommunication Group, Technical University Berlin <br>
+ * A simple combfilter <br>
+ * <br>
+ * @brief Audio Object for generating a multi tap delay <br>
+ * <br>
+ * mf_comb allows for generating a multi tap delay of desired length<br>
+ * of any incoming audio signal. <br>
+ * <br>
+ */
+
 
 
 #include "m_pd.h"
@@ -7,6 +20,21 @@
 #include <stdbool.h>
 
 static t_class *mf_reverb_tilde_class;
+
+
+/**
+ * @struct mf_reverb_tilde
+ * @brief The Pure Data struct of the mf_reverb~ object. <br>
+ * @var mf_reverb_tilde::x_obj Necessary for every signal object in Pure Data <br>
+ * @var mf_reverb_tilde::f Also necessary for signal objects, float dummy dataspace <br>
+ * for converting a float to signal if no signal is connected (CLASS_MAINSIGNALIN) <br>
+ * @var mf_reverb_tilde::mf_allpass The comb filter object for the processing <br>
+ * @var mf_reverb_tilde::mf_comb The comb filter object for the processing <br>
+ * @var mf_reverb_tilde::wetlevel The value of how wet/dry the mix is <br>
+ * @var mf_reverb_tilde::off The boolean object for the resetting of the output <br>
+ * @var mf_reverb_tilde::x_outl A signal outlet for the processed left signal <br>
+ * @var mf_reverb_tilde::x_outr A signal outlet for the processed right signal
+ */
 
 typedef struct mf_reverb_tilde
 {
@@ -23,6 +51,27 @@ typedef struct mf_reverb_tilde
 
     
 } mf_reverb_tilde;
+
+
+/**
+ * @related mf_reverb_tilde
+ * @brief Calculates the output vector including reverb effect<br>
+ * @param w A pointer to the object, input and output vectors.<br>
+ * @var mf_reverb_tilde_perform::comb_out1[n] Output of comb filter 1 <br>
+ * @var mf_reverb_tilde_perform::comb_out2[n] Output of comb filter 2 <br>
+ * @var mf_reverb_tilde_perform::comb_out3[n] Output of comb filter 3 <br>
+ * @var mf_reverb_tilde_perform::comb_out4[n] Output of comb filter 4 <br>
+ * @var mf_reverb_tilde_perform::buffer1[n] Output buffer 1 <br>
+ * @var mf_reverb_tilde_perform::buffer2[n] Output buffer 2 <br>
+ * @var mf_reverb_tilde_perform::off The boolean object for the resetting of the output <br>
+ * @var mf_reverb_tilde::x_outl A signal outlet for the processed left signal <br>
+ * @var mf_reverb_tilde::x_outr A signal outlet for the processed right signal
+ * @param outl The output vector for the left channel <br>
+ * @param outr The output vector for the right channel <br>
+ * @param vectorSize The vectorSize <br>
+ * The function stp_gain_perform performs the gain adjustment of <br>
+ * the incoming signal and copies the result to the output vector <br>
+ */
 
 t_int *mf_reverb_tilde_perform(t_int *w)
 {
@@ -58,19 +107,21 @@ t_int *mf_reverb_tilde_perform(t_int *w)
     mf_comb_perform(x->comb[2], in, comb_out3, n);
     mf_comb_perform(x->comb[3], in, comb_out4, n);
     
+    /* Assigns the values of the summed comb-filtered signals to buffer1 and buffer2 */
     for (int i = 0; i<n; i++)
     {
         buffer1[i] = (comb_out1[i] + comb_out2[i] + comb_out3[i] + comb_out4[i])/4;
         buffer2[i] = buffer1[i];
     }
 
+    /* separates the allpass-filtered signals to the buffer1 and buffer2  */
     for( int i = 0; i<20; i++)
     {
         if (i % 2 == 0) mf_allpass_perform(x->allpass[i], buffer1, buffer1, n);
         else mf_allpass_perform(x->allpass[i], buffer2, buffer2, n);
     }
     
-
+    /* The original signal is mixed with the processed signal */
     for(int i = 0; i<n; i++)
     {
         outl[i] = x->level * (in[i] + x->wetLevel * buffer1[i]) ;
@@ -81,11 +132,25 @@ t_int *mf_reverb_tilde_perform(t_int *w)
     return (w+6);
 }
 
+/**
+ * @related mf_reverb_tilde
+ * @brief Adds mf_reverb_tilde_perform to the signal chain. <br>
+ * @param x A pointer the stp_gain_tilde object <br>
+ * @param sp A pointer the input and output vectors <br>
+ * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
+ */
 void mf_reverb_tilde_dsp(mf_reverb_tilde *x, t_signal **sp)
 {
     dsp_add(mf_reverb_tilde_perform, 5, x, sp[0]->s_vec, sp[1]->s_vec, sp[2]->s_vec , sp[0]->s_n);
 }
 
+/**
+ * @related mf_reverb_tilde
+ * @brief Frees our object<br>
+ * @param x A pointer the mf_reverb_tilde object <br>
+ * The function frees the allocated memory<br>
+ * of a reverb object
+ */
 void mf_reverb_tilde_free(mf_reverb_tilde *x)
 {
     for (int i = 0; i < 4; i++)
@@ -103,6 +168,13 @@ void mf_reverb_tilde_free(mf_reverb_tilde *x)
     
 }
 
+/**
+ * @related mf_reverb_tilde
+ * @brief Panic button to mute output<br>
+ * @param x A pointer the mf_reverb_tilde object <br>
+ * The function mutes output<br>
+ * of the reverb object
+ */
 void mf_reverb_tilde_panic(mf_reverb_tilde *x)
 {
     if (x->off == false)
@@ -117,6 +189,12 @@ void mf_reverb_tilde_panic(mf_reverb_tilde *x)
     }
 }
 
+/**
+ * @related mf_reverb_tilde
+ * @brief Creates a new mf_reverb_tilde object.<br>
+ * @param f sets the reverberation time in seconds. <br>
+ * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
+ */
 void *mf_reverb_tilde_new(t_floatarg f)
 {
     mf_reverb_tilde *x = (mf_reverb_tilde *)pd_new(mf_reverb_tilde_class);
@@ -150,11 +228,24 @@ void *mf_reverb_tilde_new(t_floatarg f)
     return (void *)x;
 }
 
+/**
+ * @related mf_reverb_tilde
+ * @brief Sets the wet level of the reverb<br>
+ * @param x A pointer the mf_reverb_tilde object <br>
+ * @param wet Value from the slider to set wet level <br>
+ * The function sets the wet level<br>
+ * of the reverb object
+ */
 void mf_reverb_tilde_wet(mf_reverb_tilde* x, float wet)
 {
     x->wetLevel = wet/200;
 }
 
+/**
+ * @related mf_reverb_tilde
+ * @brief Setup of mf_reverb_tilde <br>
+ * For more information please refer to the <a href = "https://github.com/pure-data/externals-howto" > Pure Data Docs </a> <br>
+ */
 void mf_reverb_tilde_setup(void)
 {
       mf_reverb_tilde_class = class_new(gensym("mf_reverb~"),

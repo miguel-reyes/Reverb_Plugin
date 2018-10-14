@@ -93,7 +93,7 @@ void mf_reverb_tilde_free(mf_reverb_tilde *x)
         mf_comb_free(x->comb[i]);
     }
     
-    for (int i = 0; i < 12; i++) // probier hier mal andere i's
+    for (int i = 0; i < 40; i++) 
     {
         mf_allpass_free(x->allpass[i]);
     }
@@ -135,11 +135,10 @@ void *mf_reverb_tilde_new(t_floatarg f)
         mf_comb_clearBuffer(x->comb[i]);
     }
     
-    // probier hier mal andere delays
-    int dly_allpass[40] = {262,171,355,290,748,614,739,251,162,592,313,790,502,616,340,85,291,681,450,52,336,350,736,755,350,751,485,380,615,752,710,309,403,399,163,183,330,597,73,226};
     
-    //int dly_allpass[40] = { 155,53,88,16,49,13,49,181,63,116,190,67,123,10,108,33,198,166,144,118,160,72,85,140,49,193,15,141,100,91,66,122,28,92,3,61,107,15,141,42};
-
+    int dly_allpass[40] = {262,171,355,290,244,327,487,251,162,592,313,432,502,616,340,85,291,119,450,52,336,350,326,159,350,482,485,380,468,222,74,309,403,399,163,183,330,321,73,226};
+    
+  
 
     for(int i = 0; i < 40; i++)
     {
@@ -153,7 +152,7 @@ void *mf_reverb_tilde_new(t_floatarg f)
 
 void mf_reverb_tilde_wet(mf_reverb_tilde* x, float wet)
 {
-    x->wetLevel = wet/100;
+    x->wetLevel = wet/200;
 }
 
 void mf_reverb_tilde_setup(void)

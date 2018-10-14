@@ -1,13 +1,12 @@
-#N canvas 617 145 848 528 10;
+#N canvas -1318 371 848 528 10;
 #X obj 377 391 dac~;
-#X obj 342 132 adc~;
 #X obj 596 248 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 562 265 Panic Button;
 #X msg 145 237 wet \$1;
 #X floatatom 103 222 5 0 0 0 - - -, f 5;
 #X obj 50 331 hsl 128 15 0 100 0 0 empty empty WET_LEVEL -2 -8 0 10
--262144 -1 -1 2400 1;
+-262144 -1 -1 0 1;
 #X obj 233 61 openpanel;
 #X msg 236 105 open \$1;
 #X obj 238 139 readsf~;
@@ -15,21 +14,14 @@
 -1;
 #X msg 181 138 1;
 #X obj 347 263 mf_reverb~ 3;
-#X floatatom 85 389 5 0 1 0 - - -, f 5;
-#X obj 23 384 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X msg 132 406 freeze \$1;
-#X connect 2 0 12 0;
-#X connect 4 0 12 0;
+#X connect 1 0 11 0;
+#X connect 3 0 11 0;
+#X connect 4 0 3 0;
 #X connect 5 0 4 0;
-#X connect 6 0 5 0;
+#X connect 6 0 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 12 0;
-#X connect 10 0 7 0;
-#X connect 11 0 9 0;
-#X connect 12 0 0 0;
-#X connect 12 1 0 1;
-#X connect 13 0 15 0;
-#X connect 14 0 13 0;
-#X connect 15 0 12 0;
+#X connect 8 0 11 0;
+#X connect 9 0 6 0;
+#X connect 10 0 8 0;
+#X connect 11 0 0 0;
+#X connect 11 1 0 1;

@@ -3,7 +3,9 @@ Repository for the reverb plugin developed for Pd as part of the class "Struktur
 
 
 Part of the Curriculum for the Master in Science Program "Audiokommunikation und -technologie"
+
 Professor Name: Thomas Resch
+
 Student Names: Marquis Fields, Miguel Reyes Botello and Malte Schneider
 
 Included files are the C programs for the all_pass and comb_pass filters that are meant to be used by the program mf_reverb_pd and create a reverb effect with them. 
